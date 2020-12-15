@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/company_rm"
+        style="@style/font_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@color/colorPrimaryDark"
+        android:elevation="@dimen/elevation"
+        android:padding="@dimen/padding8dp"
+        android:text="BEENIC GmbH"
+        android:textColor="@color/colorText1"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/elevation">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:background="@drawable/dateloc_bg"
+                android:alpha="0.7"
+
+                android:padding="@dimen/padding8dp"
+
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+
+                        style="@style/font_default"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/type_rm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full Time"></TextView>
+                    <TextView
+                        android:textStyle="bold"
+                        style="@style/font_default"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:id="@+id/location_rm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oldenburg"></TextView>
+                </LinearLayout>
+
+
+              <LinearLayout
+                  android:layout_weight="1"
+                  android:layout_gravity="center"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content">
+                  <TextView
+
+                      android:textStyle="bold"
+
+                      style="@style/font_default"
+                      android:layout_gravity="center"
+                      android:gravity="end"
+
+                      android:textColor="@color/colorText1"
+                      android:id="@+id/created_at_rm"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="Tue Dec 08"></TextView>
+              </LinearLayout>
+
+
+            </LinearLayout>
+
+                <ImageView
+                    android:padding="@dimen/padding8dp"
+                    android:id="@+id/img_rm"
+
+                    android:scaleType="fitCenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:src="@drawable/loading"></ImageView>
+                <LinearLayout
+                    android:padding="@dimen/padding8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        style="@style/font_default"
+                        android:id="@+id/title_rm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+
+                        android:maxLines="1"
+                        android:text="Senior Backend Engineer / Backend Developer Azure (mobile Applikationen) (m/w/d)"
+                        android:textColor="@color/colorPrimaryDark"></TextView>
+                    <TextView
+                        style="@style/font_default"
+                        android:id="@+id/description_rm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="Description"></TextView>
+
+
+
+
+
+                </LinearLayout>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

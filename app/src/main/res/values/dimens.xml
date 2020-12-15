@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="lv2dp">2dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+    <dimen name="padding8dp">8dp</dimen>
+    <dimen name="elevation">6dp</dimen>
+</resources>
