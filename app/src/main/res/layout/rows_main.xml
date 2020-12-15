@@ -4,15 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<androidx.cardview.widget.CardView
+    app:cardElevation="@dimen/elevation"
+    android:layout_marginLeft="6dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:id="@+id/company_rm"
         style="@style/font_default"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="6dp"
+
         android:background="@color/colorPrimaryDark"
         android:elevation="@dimen/elevation"
         android:padding="@dimen/padding8dp"
@@ -21,6 +25,9 @@
         android:textStyle="bold">
 
     </TextView>
+
+</androidx.cardview.widget.CardView>
+
 
     <androidx.cardview.widget.CardView
         android:layout_marginLeft="6dp"
@@ -124,7 +131,7 @@
                         android:id="@+id/description_rm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:maxLines="2"
+                        android:maxLines="3"
                         android:ellipsize="end"
                         android:text="Description"></TextView>
 

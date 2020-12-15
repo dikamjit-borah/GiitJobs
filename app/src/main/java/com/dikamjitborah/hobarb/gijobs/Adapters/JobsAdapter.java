@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.dikamjitborah.hobarb.gijobs.Model.JobSchema;
 import com.dikamjitborah.hobarb.gijobs.R;
+import com.dikamjitborah.hobarb.gijobs.WebViewActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -91,23 +92,20 @@ public class JobsAdapter extends ArrayAdapter<JobSchema> {
 
 
         rDescription = row.findViewById(R.id.description_rm);
-        rDescription.setText(jobData.getDescription());
-       /* rDescription.setOnClickListener(new View.OnClickListener() {
+
+
+
+        rDescription.setText(jobData.getDescription().replaceAll( "<[^>]*>", ""));
+       rDescription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              *//*  WebView mWebView =new WebView(df_context);
-               // mWebView.getSettings().setJavaScriptEnabled(true);
-                mWebView.loadUrl(newsData.getUrl());*//*
-                Toast.makeText(df_context, "Opening " + newsData.getId(), Toast.LENGTH_SHORT).show();
-
                 Intent indisplay = new Intent(df_context, WebViewActivity.class);
-                indisplay.putExtra("link",newsData.getUrl());
-                indisplay.putExtra("id",newsData.getId());
+                indisplay.putExtra("link",jobData.getUrl());
+                indisplay.putExtra("id",jobData.getId());
                 indisplay.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 df_context.startActivity(indisplay);
-
             }
-        });*/
+        });
 
 
 

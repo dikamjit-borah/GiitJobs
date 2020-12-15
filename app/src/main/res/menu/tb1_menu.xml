@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item app:showAsAction="collapseActionView"
+        android:id="@+id/search_tb1_menu"
+        android:title="Search for jobs"
+        android:icon="@drawable/iconfinder_search"
+
+        app:actionViewClass="android.widget.SearchView" />
+    <item app:showAsAction="always"
+        android:id="@+id/notification_tb1_menu"
+        android:title="Filters"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+       ></item>
+    <item app:showAsAction="always"
+        android:id="@+id/help_tb1_menu"
+        android:title="Query"
+        android:icon="@drawable/ic_baseline_live_help_24"
+        >
+
+    </item>
+</menu>
