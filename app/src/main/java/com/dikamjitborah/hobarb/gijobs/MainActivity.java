@@ -23,6 +23,7 @@ import com.dikamjitborah.hobarb.gijobs.Adapters.JobsAdapter;
 import com.dikamjitborah.hobarb.gijobs.ApiHandling.ApiCalls;
 import com.dikamjitborah.hobarb.gijobs.ApiHandling.RetrofitInstanceClass;
 import com.dikamjitborah.hobarb.gijobs.Model.JobSchema;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
     public boolean pb_loading = false;
     Handler pb_handler;
     Boolean apihasbeencalled = false;
+    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -56,7 +58,17 @@ public class MainActivity extends BaseActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);*/
 
         listView = findViewById(R.id.lv_main);
-        showProgressBar(this);
+         floatingActionButton = findViewById(R.id.fab_main);
+         floatingActionButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Toast.makeText(MainActivity.this, "Refreshing!", Toast.LENGTH_SHORT).show();
+                 currentPage = 1;
+                 callApi();
+             }
+         });
+
+
 
 
         try {
@@ -75,6 +87,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void callApi() {
+        showProgressBar(this);
         Call<List<JobSchema>> call = null;
         ApiCalls service = RetrofitInstanceClass.getRetrofitInstance().create(ApiCalls.class);
         call = service.getJobs(currentPage);
@@ -84,13 +97,22 @@ public class MainActivity extends BaseActivity {
             public void onResponse(Call<List<JobSchema>> call, Response<List<JobSchema>> response) {
                 jobSchema = (ArrayList<JobSchema>) response.body();
                 jobsAdapter = new JobsAdapter(getApplicationContext(), jobSchema);
-                Toast.makeText(MainActivity.this, "" + currentPage, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "" + currentPage, Toast.LENGTH_SHORT).show();
+                if(response.body().equals("[]"))
+                {
+                    currentPage = 1;
+                    Toast.makeText(MainActivity.this, "No more new jobs! Press Refresh", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                    
                 if(apihasbeencalled==false)
                 {
 
                     listView.setAdapter(jobsAdapter);
                 }
+                
                 else {
+                    
                     jobsAdapter.addListItemToAdapter(jobSchema);
                 }
                 hideProgressBar();

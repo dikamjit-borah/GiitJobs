@@ -80,8 +80,6 @@ public class JobsAdapter extends ArrayAdapter<JobSchema> {
         rLocation = row.findViewById(R.id.location_rm);
 
 
-
-
         rTitle.setText(jobData.getTitle());
         rCreatedAt.setText(jobData.getCreated_at());
         rCompany.setText(jobData.getCompany());
